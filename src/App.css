@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.button{
+    background-color: rgb(141, 236, 141);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px grey;
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin: 5px;
+    cursor:pointer;
+}
+
+h1{
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgb(141, 236, 141), white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin: 10px 0px;
+}

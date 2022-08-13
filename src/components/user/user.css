@@ -1,0 +1,25 @@
+.card{
+    border: 1px solid #8dec8d;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px gray;
+    width: 400px;
+    height: 200px;
+    margin: 30px;
+    padding: 30px;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.input-edit-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+}
