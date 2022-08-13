@@ -1,12 +1,12 @@
-.card-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.button-edit{
+.button-edit {
   margin-left: 40px;
 }
