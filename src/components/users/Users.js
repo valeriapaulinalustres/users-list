@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import User from '../user/User';
 import './users.css';
@@ -23,6 +22,7 @@ function Users() {
       });
   };
 
+  //function for adding a new user
   const onAdd = async (name, phone, email) => {
     await fetch("https://jsonplaceholder.typicode.com/users", {
       method: "POST",
@@ -50,10 +50,12 @@ function Users() {
       });
   };
 
+  //function for changing edit view
   function handleEdit() {
     setEdit(true)
   }
 
+  //function for deleting users
   const deleteUser = async (id) => {
     await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
       method: "DELETE",
@@ -79,17 +81,21 @@ function Users() {
     users.splice(index, 1, { name: newName, phone: newPhone, email: newMail })
   }
 
+  //button animation
   const onEnter = ({ currentTarget }) => {
     gsap.to(currentTarget, { backgroundColor: "#ffffff", color: "#8dec8d", border: "1px solid #8dec8d", scale: 1.2 });
   };
-
   const onLeave = ({ currentTarget }) => {
     gsap.to(currentTarget, { backgroundColor: "#8dec8d", color: "#000000", scale: 1 });
   };
 
   return (
     <div>
-      <AddUser onAdd={onAdd} />
+      <AddUser 
+      onAdd={onAdd}
+      onEnter={onEnter}
+      onLeave={onLeave} 
+      />
       {edit ? <div><button onClick={() => setEdit(false)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Back</button></div> : <button onClick={() => setEdit(true)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Edit users</button>}
       <div className="card-container">
         {users.map((user, index) => (
@@ -104,6 +110,8 @@ function Users() {
             edit={edit}
             setEdit={setEdit}
             updateUsers={updateUsers}
+            onEnter={onEnter}
+            onLeave={onLeave}
           />
         ))}
       </div>
