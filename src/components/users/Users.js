@@ -3,6 +3,7 @@ import User from '../user/User';
 import './users.css';
 import gsap from "gsap";
 import AddUser from "../addUser/AddUser.js";
+import Toast from 'sweetalert2';
 
 function Users() {
 
@@ -89,12 +90,54 @@ function Users() {
     gsap.to(currentTarget, { backgroundColor: "#8dec8d", color: "#000000", scale: 1 });
   };
 
+   //validations
+   const validateName = (nombre) => {
+    if (!nombre) { invalidName() };
+    if (typeof nombre !== "string") { invalidName() }
+    let expReg = /^[A-Za-zÁáÉéÍíÓóÚúÑñÜú\s]+$/g.test(nombre);
+    return expReg
+  }
+
+  const validateMail = (email) => {
+    if (!email) { invalidEmail() };
+    if (typeof email !== "string") { invalidEmail() }
+    let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+    return expReg
+  }
+
+  //alerts for invalid entries
+  const invalidName = () => {
+    Toast.fire({
+      icon: 'warning',
+      title: 'Invalid name'
+    })
+  }
+
+  const invalidPhone = () => {
+    Toast.fire({
+      icon: 'warning',
+      title: 'Invalid phone'
+    })
+  }
+
+  const invalidEmail = () => {
+    Toast.fire({
+      icon: 'warning',
+      title: 'Invalid email'
+    })
+  };
+
   return (
     <div>
       <AddUser 
       onAdd={onAdd}
       onEnter={onEnter}
       onLeave={onLeave} 
+      validateName={validateName}
+      validateMail={validateMail}
+      invalidName={invalidName}
+      invalidPhone={invalidPhone}
+      invalidEmail={invalidEmail}
       />
       {edit ? <div><button onClick={() => setEdit(false)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Back</button></div> : <button onClick={() => setEdit(true)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Edit users</button>}
       <div className="card-container">
@@ -112,6 +155,11 @@ function Users() {
             updateUsers={updateUsers}
             onEnter={onEnter}
             onLeave={onLeave}
+            validateName={validateName}
+            validateMail={validateMail}
+            invalidName={invalidName}
+            invalidPhone={invalidPhone}
+            invalidEmail={invalidEmail}
           />
         ))}
       </div>

@@ -3,7 +3,8 @@ import './addUser.css';
 import Toast from 'sweetalert2';
 
 
-function AddUser({ onAdd, onEnter, onLeave }) {
+function AddUser({ onAdd, onEnter, onLeave,  validateName, 
+validateMail, invalidName, invalidPhone, invalidEmail,  }) {
 
   //event submit and email, phone and name validations
   const handleOnSubmit = (e) => {
@@ -30,42 +31,7 @@ function AddUser({ onAdd, onEnter, onLeave }) {
 
   }
 
-  //validations
-  const validateName = (nombre) => {
-    if (!nombre) { invalidName() };
-    if (typeof nombre !== "string") { invalidName() }
-    let expReg = /^[A-Za-zÁáÉéÍíÓóÚúÑñÜú\s]+$/g.test(nombre);
-    return expReg
-  }
-
-  const validateMail = (email) => {
-    if (!email) { invalidEmail() };
-    if (typeof email !== "string") { invalidEmail() }
-    let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
-    return expReg
-  }
-
-  //alerts for invalid entries
-  const invalidName = () => {
-    Toast.fire({
-      icon: 'warning',
-      title: 'Invalid name'
-    })
-  }
-
-  const invalidPhone = () => {
-    Toast.fire({
-      icon: 'warning',
-      title: 'Invalid phone'
-    })
-  }
-
-  const invalidEmail = () => {
-    Toast.fire({
-      icon: 'warning',
-      title: 'Invalid email'
-    })
-  };
+ 
 
   return (
     <div className='form-container'>

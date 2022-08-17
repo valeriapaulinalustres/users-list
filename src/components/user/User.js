@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import './user.css';
 import Swal from 'sweetalert2';
 
-function User({ id, email, name, phone, deleteUser, edit, updateUsers, onEnter, onLeave }) {
+function User({ id, email, name, phone, deleteUser, edit, updateUsers, onEnter, onLeave, validateName, 
+  validateMail, invalidName, invalidPhone, invalidEmail }) {
 
   const inputNameRef = useRef()
   const inputMailRef = useRef()
@@ -29,6 +30,15 @@ function User({ id, email, name, phone, deleteUser, edit, updateUsers, onEnter, 
 
   //function for saving changes in users
   const handleSave = () => {
+    
+    const validName = validateName(inputNameRef.current.value);
+    if (!validName) return invalidName();
+
+    if (inputPhoneRef.current.value == "") return invalidPhone();
+
+    const validEmail = validateMail(inputMailRef.current.value);
+    if (!validEmail) return invalidEmail();
+
     Swal.fire({
       title: 'Do you want to save the changes?',
       showDenyButton: true,
