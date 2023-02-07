@@ -86,9 +86,9 @@ function User({ id, email, name, phone, deleteUser, edit, updateUsers, onEnter, 
 
   //function for rendering users list mode
   const renderUser = () => {
-    return <div className='card'>
+    return <div className='card' role="userContainer">
       <div className='card-header'>
-        <h2>{name}</h2>
+        <h2 role="userName">{name}</h2>
         <button onClick={handleDelete} className="button" onMouseEnter={onEnter} onMouseLeave={onLeave}>Delete</button>
       </div>
       <h3>phone: {phone}</h3>

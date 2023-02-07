@@ -34,13 +34,13 @@ validateMail, invalidName, invalidPhone, invalidEmail,  }) {
  
 
   return (
-    <div className='form-container'>
+    <div className='form-container' role='formContainer'>
       <form onSubmit={handleOnSubmit}>
         <h2>Add User</h2>
         <input placeholder="Name" name="name" className='input' type="text" />
         <input placeholder="Phone" name="phone" className='input' type="number" />
         <input placeholder="Email" name="email" className='input' />
-        <button onSubmit={handleOnSubmit} className="button" onMouseEnter={onEnter} onMouseLeave={onLeave}>Add</button>
+        <button onSubmit={handleOnSubmit} className="button" role="buttonSubmit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Add</button>
       </form>
     </div>
   );
