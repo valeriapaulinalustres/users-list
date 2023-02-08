@@ -4,7 +4,7 @@ import Toast from 'sweetalert2';
 
 
 function AddUser({ onAdd, onEnter, onLeave,  validateName, 
-validateMail, invalidName, invalidPhone, invalidEmail,  }) {
+validateMail, invalidName, invalidPhone, invalidEmail, addUser }) {
 
   //event submit and email, phone and name validations
   const handleOnSubmit = (e) => {
@@ -36,11 +36,16 @@ validateMail, invalidName, invalidPhone, invalidEmail,  }) {
   return (
     <div className='form-container' role='formContainer'>
       <form onSubmit={handleOnSubmit}>
-        <h2>Add User</h2>
+        <h2>{addUser}</h2>
         <input placeholder="Name" name="name" className='input' type="text" />
         <input placeholder="Phone" name="phone" className='input' type="number" />
         <input placeholder="Email" name="email" className='input' />
-        <button onSubmit={handleOnSubmit} className="button" role="buttonSubmit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Add</button>
+        <button 
+        onSubmit={handleOnSubmit} 
+        className="button" 
+        role="buttonSubmit" 
+        onMouseEnter={onEnter} 
+        onMouseLeave={onLeave}>Add</button>
       </form>
     </div>
   );

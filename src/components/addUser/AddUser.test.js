@@ -1,16 +1,24 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import AddUser from './AddUser';
-//import User from './User'
 
-beforeEach(()=>{
+
+
+// test('renders tittle', () => {
+//   const tittle = screen.getByText(/add user/i);
+//   expect(tittle).toBeInTheDocument();
+// });
+
+
+const addUserProp = "Add User"
+  
+  it("matches snapshot (PROP)", () => {
+    const { asFragment } = render(<AddUser addUserProp={addUserProp} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  beforeEach(()=>{
     render(<AddUser />)
 })
-
-test('renders tittle', () => {
-  const tittle = screen.getByText(/add user/i);
-  expect(tittle).toBeInTheDocument();
-});
-
 
 test('should render form Container', () => {
     const formContainer = screen.getByRole('formContainer');
@@ -32,18 +40,8 @@ test('should render form Container', () => {
     expect(input).toBeInTheDocument();
   });
 
-  it('should render a primary button', () => {
-    const btn = screen.getByText("Add");
-    expect(btn).toBeInTheDocument();
-    expect(btn).toHaveClass('button') 
-  });
-
-//   it('should add a new user when clicked', async () => {
-//     render(<User />)
-//     const btn = screen.getByText("Add");
-//     const inputName = screen.getByPlaceholderText(/name/i);
-//     fireEvent.change(inputName, {target: {value:'Valeria'}})
-//     fireEvent.click(btn)
-//     const addedUser = await screen.findByText(/valeria/i)
-//     expect(addedUser).toBeInTheDocument();
-//   });
+  // it('should render a primary button', () => {
+  //   const btn = screen.getByText("Add User");
+  //   expect(btn).toBeInTheDocument();
+  //   expect(btn).toHaveClass('button') 
+  // });

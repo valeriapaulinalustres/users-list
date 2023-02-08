@@ -127,6 +127,8 @@ function Users() {
     })
   };
 
+  const addUser = "Add User"
+
   return (
     <div>
       <AddUser 
@@ -138,6 +140,7 @@ function Users() {
       invalidName={invalidName}
       invalidPhone={invalidPhone}
       invalidEmail={invalidEmail}
+      addUser={addUser}
       />
       {edit ? <div><button onClick={() => setEdit(false)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Back</button></div> : <button onClick={() => setEdit(true)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Edit users</button>}
       <div className="card-container">
