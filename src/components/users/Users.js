@@ -142,7 +142,22 @@ function Users() {
       invalidEmail={invalidEmail}
       addUser={addUser}
       />
-      {edit ? <div><button onClick={() => setEdit(false)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Back</button></div> : <button onClick={() => setEdit(true)} className="button button-edit" onMouseEnter={onEnter} onMouseLeave={onLeave}>Edit users</button>}
+      {edit ? <div>
+        <button 
+          onClick={() => setEdit(false)}  
+          className="button button-edit" 
+          onMouseEnter={onEnter} 
+          onMouseLeave={onLeave}>
+            Back
+            </button>
+            </div> 
+            : <button onClick={() => setEdit(true)} 
+            role="btnEdit"
+            className="button button-edit" 
+            onMouseEnter={onEnter} 
+            onMouseLeave={onLeave}>
+              Edit users
+              </button>}
       <div className="card-container">
         {users.map((user, index) => (
           <User

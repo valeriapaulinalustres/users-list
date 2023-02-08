@@ -37,9 +37,9 @@ validateMail, invalidName, invalidPhone, invalidEmail, addUser }) {
     <div className='form-container' role='formContainer'>
       <form onSubmit={handleOnSubmit}>
         <h2>{addUser}</h2>
-        <input placeholder="Name" name="name" className='input' type="text" />
-        <input placeholder="Phone" name="phone" className='input' type="number" />
-        <input placeholder="Email" name="email" className='input' />
+        <input placeholder="Name" name="name" data-testid="filter-input-name" className='input' type="text" />
+        <input placeholder="Phone" name="phone" data-testid="filter-input-phone" className='input' type="number" />
+        <input placeholder="Email" name="email" data-testid="filter-input-email" className='input' />
         <button 
         onSubmit={handleOnSubmit} 
         className="button" 

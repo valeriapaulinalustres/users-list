@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot (mail PROP) 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="card"
+      role="userContainer"
+    >
+      <div
+        class="card-header"
+      >
+        <h2
+          role="userName"
+        />
+        <button
+          class="button"
+        >
+          Delete
+        </button>
+      </div>
+      <h3>
+        phone: 
+      </h3>
+      <h3>
+        email: 
+      </h3>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot (name PROP) 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="card"
+      role="userContainer"
+    >
+      <div
+        class="card-header"
+      >
+        <h2
+          role="userName"
+        />
+        <button
+          class="button"
+        >
+          Delete
+        </button>
+      </div>
+      <h3>
+        phone: 
+      </h3>
+      <h3>
+        email: 
+      </h3>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot (phone PROP) 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="card"
+      role="userContainer"
+    >
+      <div
+        class="card-header"
+      >
+        <h2
+          role="userName"
+        />
+        <button
+          class="button"
+        >
+          Delete
+        </button>
+      </div>
+      <h3>
+        phone: 
+      </h3>
+      <h3>
+        email: 
+      </h3>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -2,19 +2,34 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import AddUser from './AddUser';
 
 
-
-// test('renders tittle', () => {
-//   const tittle = screen.getByText(/add user/i);
-//   expect(tittle).toBeInTheDocument();
-// });
-
-
 const addUserProp = "Add User"
   
   it("matches snapshot (PROP)", () => {
     const { asFragment } = render(<AddUser addUserProp={addUserProp} />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  // describe("AddUser component", () => {
+  //   const mockChangeValue = jest.fn();
+  //   const stubbedSearchValue = {
+  //     name: "Valeria",
+  //     phone: "123456",
+  //     email: "va@gmail.com",
+  //   };
+  
+  //   it("shows all required input fields with empty values", () => {
+  //     const { getByTestId } = render(
+  //       <AddUser
+  //         searchValue={stubbedSearchValue}
+  //         onAdd={mockChangeValue}
+  //       />
+  //     );
+  
+  //   //  expect(screen.getAllByPlaceholderText(/name/i).name.value).toBe("Valeria");
+  //      expect(getByTestId("filter-input-phone").value).toBe("123456");
+  //      expect(getByTestId("filter-input-email").value).toBe("va@gmail.com");
+  //   });
+  // })
 
   beforeEach(()=>{
     render(<AddUser />)

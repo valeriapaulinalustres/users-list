@@ -10,54 +10,21 @@ exports[`matches snapshot (PROP) 1`] = `
       <h2 />
       <input
         class="input"
+        data-testid="filter-input-name"
         name="name"
         placeholder="Name"
         type="text"
       />
       <input
         class="input"
+        data-testid="filter-input-phone"
         name="phone"
         placeholder="Phone"
         type="number"
       />
       <input
         class="input"
-        name="email"
-        placeholder="Email"
-      />
-      <button
-        class="button"
-        role="buttonSubmit"
-      >
-        Add
-      </button>
-    </form>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`matches snapshot (prop) 1`] = `
-<DocumentFragment>
-  <div
-    class="form-container"
-    role="formContainer"
-  >
-    <form>
-      <h2 />
-      <input
-        class="input"
-        name="name"
-        placeholder="Name"
-        type="text"
-      />
-      <input
-        class="input"
-        name="phone"
-        placeholder="Phone"
-        type="number"
-      />
-      <input
-        class="input"
+        data-testid="filter-input-email"
         name="email"
         placeholder="Email"
       />
