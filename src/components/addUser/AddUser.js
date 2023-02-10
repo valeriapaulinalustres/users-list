@@ -9,7 +9,6 @@ validateMail, invalidName, invalidPhone, invalidEmail, addUser }) {
   //event submit and email, phone and name validations
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.phone.value)
 
     const validName = validateName(e.target.name.value);
     if (!validName) return invalidName();
@@ -44,6 +43,7 @@ validateMail, invalidName, invalidPhone, invalidEmail, addUser }) {
         onSubmit={handleOnSubmit} 
         className="button" 
         role="buttonSubmit" 
+        name="submitButtonS"
         onMouseEnter={onEnter} 
         onMouseLeave={onLeave}>Add</button>
       </form>

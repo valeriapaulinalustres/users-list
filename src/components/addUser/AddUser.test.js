@@ -2,12 +2,23 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import AddUser from './AddUser';
 
 
-const addUserProp = "Add User"
+
   
+it("should render the title passed as prop", async () => {
+  render(<AddUser addUser={"Add User"} />);
+  const title = screen.getByText(/add user/i)
+  expect(title).toBeInTheDocument();
+});
+
+const addUser = "Add User"
+
   it("matches snapshot (PROP)", () => {
-    const { asFragment } = render(<AddUser addUserProp={addUserProp} />);
+    const { asFragment } = render(<AddUser addUser={addUser} />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+
+
 
   // describe("AddUser component", () => {
   //   const mockChangeValue = jest.fn();
@@ -40,20 +51,45 @@ test('should render form Container', () => {
     expect(formContainer).toBeInTheDocument();
   });
 
-  test('should render input for name', () => {
-    const input = screen.getByPlaceholderText(/name/i);
-    expect(input).toBeInTheDocument();
-  });
+  describe("render inputs", ()=>{
+    test('should render input for name', () => {
+      const input = screen.getByPlaceholderText(/name/i);
+      expect(input).toBeInTheDocument();
+    });
+  
+    test('should render input for phone', () => {
+      const input = screen.getByPlaceholderText(/phone/i);
+      expect(input).toBeInTheDocument();
+    });
+  
+    test('should render input for email', () => {
+      const input = screen.getByPlaceholderText(/email/i);
+      expect(input).toBeInTheDocument();
+    });
 
-  test('should render input for phone', () => {
-    const input = screen.getByPlaceholderText(/phone/i);
-    expect(input).toBeInTheDocument();
-  });
+  })
 
-  test('should render input for email', () => {
-    const input = screen.getByPlaceholderText(/email/i);
-    expect(input).toBeInTheDocument();
-  });
+  describe('input events', ()=>{
+    test('should be able to type in input', async () => {
+      const input = screen.getByPlaceholderText(/name/i);
+      fireEvent.change(input, {target: {value: "Valeria"}})
+      expect(input.value).toBe("Valeria");
+    });
+
+
+    // test('should be able to clear input when clicked "add user" button', async () => {
+    //   render(<AddUser validateName={()=>{}} onAdd={()=>{}}/>)
+    //   const input = screen.getByPlaceholderText(/name/i);
+    //   const btn = screen.getByRole('buttonSubmit')
+    //   fireEvent.change(input, {target: {value: "Valeria"}})
+    //   fireEvent.click(btn)
+    //   expect(input.value).toBe("");
+    // });
+
+   
+  })
+
+ 
 
   // it('should render a primary button', () => {
   //   const btn = screen.getByText("Add User");
