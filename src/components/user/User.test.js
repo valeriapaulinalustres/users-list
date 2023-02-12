@@ -1,8 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import User from './User';
 
+//Testing:
+//Unit testing:
+//✔ renders a user
+//event onClick edit button renders form/navigate
+//event onClick delete button doesn't render user
 
-const nameProp = "Leanne Graham"
+describe('renders a user', ()=>{
+
+  const nameProp = "Leanne Graham"
   
   it("matches snapshot (name PROP)", () => {
     const { asFragment } = render(<User prop={nameProp} />);
@@ -52,3 +59,7 @@ test('should render user Container', async () => {
 //     expect(div.length).toBe(10)
 //   })
 // })
+
+})
+
+

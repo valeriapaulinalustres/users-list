@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot (mail PROP) 1`] = `
+exports[`renders a user matches snapshot (mail PROP) 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -30,7 +30,7 @@ exports[`matches snapshot (mail PROP) 1`] = `
 </DocumentFragment>
 `;
 
-exports[`matches snapshot (name PROP) 1`] = `
+exports[`renders a user matches snapshot (name PROP) 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -60,7 +60,7 @@ exports[`matches snapshot (name PROP) 1`] = `
 </DocumentFragment>
 `;
 
-exports[`matches snapshot (phone PROP) 1`] = `
+exports[`renders a user matches snapshot (phone PROP) 1`] = `
 <DocumentFragment>
   <div>
     <div

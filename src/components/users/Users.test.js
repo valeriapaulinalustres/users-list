@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import Users from './Users';
 
 
+// renders edit button
+
 beforeEach(()=>{
     render(<Users />)
 })
@@ -67,3 +69,8 @@ test('should render edit button', () => {
 //         expect(result.data[0]).toBe(stubbedUsers);
 //     });
 // })
+it("should render edit button", () => {
+
+  const editBtn = screen.getByText(/edit users/i)
+  expect(editBtn).toBeInTheDocument();
+});

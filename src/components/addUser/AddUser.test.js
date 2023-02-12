@@ -3,8 +3,9 @@ import AddUser from './AddUser';
 
 //Testing:
 //Unit testing:
-//render each input, tittle and button
-//inputs to come back to "" after event click
+//✔ render each input, tittle and button
+//✔ render input when event onChange
+//X inputs to come back to "" after event click
 
 //Interaction testing:
 //event click sends to <User/> the input => see <Users />
@@ -23,30 +24,6 @@ const addUser = "Add User"
     expect(asFragment()).toMatchSnapshot();
   });
 
-
-
-
-  // describe("AddUser component", () => {
-  //   const mockChangeValue = jest.fn();
-  //   const stubbedSearchValue = {
-  //     name: "Valeria",
-  //     phone: "123456",
-  //     email: "va@gmail.com",
-  //   };
-  
-  //   it("shows all required input fields with empty values", () => {
-  //     const { getByTestId } = render(
-  //       <AddUser
-  //         searchValue={stubbedSearchValue}
-  //         onAdd={mockChangeValue}
-  //       />
-  //     );
-  
-  //   //  expect(screen.getAllByPlaceholderText(/name/i).name.value).toBe("Valeria");
-  //      expect(getByTestId("filter-input-phone").value).toBe("123456");
-  //      expect(getByTestId("filter-input-email").value).toBe("va@gmail.com");
-  //   });
-  // })
 
   beforeEach(()=>{
     render(<AddUser />)
@@ -101,9 +78,3 @@ test('should render form Container', () => {
   })
 
  
-
-  // it('should render a primary button', () => {
-  //   const btn = screen.getByText("Add User");
-  //   expect(btn).toBeInTheDocument();
-  //   expect(btn).toHaveClass('button') 
-  // });
