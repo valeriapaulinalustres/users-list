@@ -178,6 +178,7 @@ function Users() {
             invalidName={invalidName}
             invalidPhone={invalidPhone}
             invalidEmail={invalidEmail}
+            index={index}
           />
         ))}
       </div>

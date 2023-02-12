@@ -1,7 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import AddUser from './AddUser';
 
+//Testing:
+//Unit testing:
+//render each input, tittle and button
+//inputs to come back to "" after event click
 
+//Interaction testing:
+//event click sends to <User/> the input => see <Users />
 
   
 it("should render the title passed as prop", async () => {
@@ -51,7 +57,7 @@ test('should render form Container', () => {
     expect(formContainer).toBeInTheDocument();
   });
 
-  describe("render inputs", ()=>{
+  describe("should render inputs and button", ()=>{
     test('should render input for name', () => {
       const input = screen.getByPlaceholderText(/name/i);
       expect(input).toBeInTheDocument();
@@ -67,6 +73,11 @@ test('should render form Container', () => {
       expect(input).toBeInTheDocument();
     });
 
+    test('should render button', () => {
+      const btn = screen.getByRole(/buttonSubmit/i);
+      expect(btn).toBeInTheDocument();
+    });
+
   })
 
   describe('input events', ()=>{
@@ -78,7 +89,7 @@ test('should render form Container', () => {
 
 
     // test('should be able to clear input when clicked "add user" button', async () => {
-    //   render(<AddUser validateName={()=>{}} onAdd={()=>{}}/>)
+    // //  render(<AddUser validateName={()=>{}} onAdd={()=>{}}/>)
     //   const input = screen.getByPlaceholderText(/name/i);
     //   const btn = screen.getByRole('buttonSubmit')
     //   fireEvent.change(input, {target: {value: "Valeria"}})

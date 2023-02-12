@@ -42,3 +42,13 @@ test('should render user Container', async () => {
     const userName = await screen.findByRole(/userName/i)
     expect(userName).toBeInTheDocument();
   });
+
+  
+// describe('fetch users', ()=>{
+  
+//   it('should render the quantity of users', async ()=>{
+//     render(<User />)
+//     const div = await screen.findByRole(/userContainer/i)
+//     expect(div.length).toBe(10)
+//   })
+// })
